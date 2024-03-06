@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('#btn').on('click',()=>{
+                const input = $('<input>').attr("value", "before테스트")
+                $('#img1').after('<img src="logo.gif">')
+                $('#img1').before(input)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">클릭</button>
+    <img src="logo.gif" id="img1">
+</body>
+</html>

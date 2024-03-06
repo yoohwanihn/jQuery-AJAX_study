@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(document).ready(()=>{
+        //     $('button').on('click',()=>{
+        //         //$('#display').html("안녕하세요");
+        //         $('#display').load("outer.txt");
+        //     })
+        // })
+
+        document.addEventListener("DOMContentLoaded", function(){
+            const btn = document.querySelector("button");
+            btn.addEventListener("click",function(){
+                const display = document.getElementById("display");
+                // display.textContent = "안녕하세요";
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('get','outer.txt', true); // true = 비동기로 하겠다.
+                xhr.send();
+                xhr.onload = () =>{
+                    if(xhr.status == 200){
+                    display.textContent = xhr.responseText;
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+    <button>클릭해보세요.</button>
+
+    <div id="display">=================================================================</div>
+</body>
+</html>

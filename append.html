@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $('#btn_append').on('click',()=>{
+                $("p").append('저는 홈페이지 만들기입니다.');
+                $('ul').append("<li>네번째 아이템</li>");
+                $('ul').prepend("<li>영번째 아이템</li>");
+                $('ul').before("<li>영번째 아이템</li>");
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <button id="btn_append">Append</button>
+    <p>안녕하세요.</p>
+    <ul>
+        <li>첫번째 아이템</li>
+        <li>두번째 아이템</li>
+        <li>세번째 아이템</li>
+    </ul>
+</body>
+</html>

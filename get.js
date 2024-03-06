@@ -1,0 +1,10 @@
+$(document).ready(()=>{
+    $("#btn_get").on('click',()=>{
+        alert($('#dis').text());
+        alert($('#dis').html());
+        alert($('#name').val());
+        alert($('#name2').val());
+        alert($('#daum').attr('href'));
+        $('#daum').attr('href','https://naver.com')
+    })
+})

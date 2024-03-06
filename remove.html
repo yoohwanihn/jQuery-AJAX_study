@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="get.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#btn").on('click',()=>{
+                // remove : 선택된 요소를 포함, 하위 요소들을 제거
+                //$(".div1").remove();
+
+                // empty : 선택된 요소의 하위 요소들을 제거
+                //$("p").empty();
+                $("p").remove('.red, .yellow');
+            })
+        })
+    </script>
+    <style>
+        .div{
+            border: 1p solid red;
+            background-color: yellow;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <div class="div1">
+        <p>안녕하세요.</p>
+        <p class="red">안녕하세요.</p>
+        <p>안녕하세요.</p>
+        <p class="yellow">안녕하세요.</p>
+        <p>안녕하세요.</p>
+        <p>안녕하세요.</p>
+    </div>
+</body>
+</html>

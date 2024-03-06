@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(function(){
+        //     $('div').on('mouseover', function(){
+        //         $('#display').text($(this).css('background-color'));
+        //     })
+        // })
+
+        $(document).ready(function () {
+            $('div').on('mouseover', function () {
+                //$('#display').text($(this).css('background-color'));
+                
+                // $(this).css('background-color', "black")
+                //         .css('border', "5px solid red")
+                //         .css('color', "white");
+
+                $(this).css({
+                    'background-color' : "pink",
+                    border : "5px solid red",
+                    'color' : "white"
+                });
+            });
+        });
+
+        /** Arrow함수를 사용하였기 때문에 this키워드를 사용할 수 없다. */
+        // $(document).ready(()=>{
+        //     $('div').on('mouseover', ()=>{
+        //         $('#display').text($(this).css('background-color'));
+        //     })
+        // })
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .a {
+            background-color: #ccddee;
+        }
+
+        .b {
+            background-color: #335588;
+        }
+
+        .c {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">A</div>
+    <div class="b">B</div>
+    <div class="c">C</div>
+    <span id="display"></span>
+</body>
+
+</html>

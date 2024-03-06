@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#btn").on('click',()=>{
+                //100 100
+                // $("#display").text("width = " + $('.dim').width() + " height = " + $('.dim').height());
+                
+                //120 120
+                // $("#display").text("width = " + $('.dim').innerWidth() + " height = " + $('.dim').innerHeight())
+                
+                //140 140 padding 포함
+                //$("#display").text("width = " + $('.dim').outerWidth() + " height = " + $('.dim').outerHeight())
+                
+                //160 160 margin도 포함
+                $("#display").text("width = " + $('.dim').outerWidth(true) + " height = " + $('.dim').outerHeight(true))
+            
+            })
+        })
+    </script>
+    <style>
+        div.dim{
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid red;
+            background-color: goldenrod;
+            /* box-sizing: border-box; */
+        }
+        div.dim1{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">클릭해 보세요.</button>
+    <span>크기 출력</span>
+    <span id="display">크기 출력</span>
+    <div class="dim"></div>
+    <div class="dim1"></div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        // $(function(){
+        //     $("button").on("click",()=>{
+        //         $('.display').text('jQuery 동작하죠');
+        //     })
+        // })
+
+        
+        /** jQuery 말고 $ 기호를 사용하는 라이브러리와 충돌을 방지하기 위해 사용 */
+        let abc = $.noConflict();
+        abc(function(){
+            abc('button').on('click', function(){
+                abc('.display').text('jQuery 동작하죠');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>클릭</button>
+    <div class="display">===</div>
+</body>
+</html>

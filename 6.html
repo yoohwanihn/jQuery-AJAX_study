@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $(".btn").on('click',function(){
+            //     $(".ani_box").animate({
+            //         left:'100px',
+            //         top: '100px',
+            //         width: '+=400px',
+            //         height: '200px',
+            //         // height: 'toggle',
+            //         padding : '20px',
+            //         margin : '100px',
+            //         opacity : '0.5'
+            //     },'slow', function(){
+            //         $(this).css("background-color", "red");
+            //     });
+            // })
+
+            //queue 방식, First In First Out 
+            $(".btn").on('click',function(){
+                $(".ani_box").animate({width: '200px'},'slow');
+                $(".ani_box").animate({height: '200px'},'slow');
+                $(".ani_box1").animate({width: '200px'},'slow');
+                $(".ani_box1").animate({height: '50px'},'slow');
+            })
+        })
+    </script>
+    <style>
+        body{
+            margin: 0;
+        }
+
+        div.ani_box{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            position: absolute;
+            padding: 0;
+        }
+
+        div.ani_box1{
+            width: 100px;
+            height: 100px;
+            left: 300px;
+            background-color: red;
+            position: absolute;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">클릭</button>
+    <div class="ani_box"></div>
+    <div class="ani_box1"></div>
+</body>
+</html>

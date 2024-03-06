@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        p {
+            background-color: yellow;
+        }
+
+        div {
+            border: 5px solid red;
+            margin: 10px;
+        }
+
+        main {
+            border: 5px solid blue;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("button").on("click", function () {
+                /** div 4개 생김, 각각의 p에 생김 */
+                // $('p').wrap('<div></div>');
+
+                /** div 1개 생김. 모든 p 합쳐서 */
+                // $('p').wrapAll('<div></div>');
+
+                /** span태그 안에도 볼드 적용됨 */
+                // $('p').wrapInner('<b></b>');
+
+                /** 감싸고 있던 div가 사라짐, 부모 순서대로 */
+                $('p').unwrap();
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>클릭하세요.</button>
+    <main>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, suscipit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, suscipit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, suscipit.</p>
+            <p>Lorem ipsum dolor <span>sisisisi</span> sit amet consectetur adipisicing elit. Et, suscipit.</p>
+
+            <div>
+                <p>11111</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

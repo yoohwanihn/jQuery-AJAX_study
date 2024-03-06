@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 5px solid gray;
+            color: gray;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        $(function (){
+            /** 바로 위 부모 요소 */
+            // $('span').parent().css({
+            //     color : 'blue',
+            //     border : "5px solid hotpink",
+            // })
+
+            /** 부모부터 시조까지 */
+            // $('span.aaaa').parents("div").css({
+            //     color : 'blue',
+            //     border : "5px solid hotpink",
+            // })
+
+            /** 지정된 parents 전단계 까지 */
+            $('span.aaaa').parentsUntil(".ancestors").css({
+                color : 'blue',
+                border : "5px solid hotpink",
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div class="ancestors">
+        ancestors
+        <div><p><span class="aaaa">span</span></p></div>
+        <p>p</p>
+        <p><span>span</span></p>
+        <p>p</p>
+    </div>
+</body>
+</html>

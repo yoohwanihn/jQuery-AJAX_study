@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn").on('click', ()=>{
+                /** div의 첫째 자식 모두*/
+                // $("div").children('*').css({border : "2px solid red"})
+
+                /** div의 첫째 자식중 p */
+                // $("div").children('p').css({border : "2px solid red"})
+
+                /** div의 첫째 자식중 p이면서 class가 na */
+                // $("div").children('p.na').css({border : "2px solid red"})
+
+                /** p의 첫째 자식 모두 */
+                // $("p").children('*').css({border : "2px solid red"})
+
+                /** class가 a인 자손의 b인 클래스 모두 */
+                $(".a").find('.b').css({border : "2px solid red"})
+            })
+        })
+    </script>
+    <style>
+        div * {
+            border : 2px solid gray;
+            display : block;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">클릭하세요.</button>
+    <div>
+        div
+        <div class="a">
+            <p class="b">p
+                <span>span</span>
+            </p>
+            <p>p
+                <span class="b">span</span>
+            </p>
+        </div>
+        <p class="na">p
+            <span>span</span>
+        </p>
+        <p>p</p>
+        <p>p
+            <span>span</span>
+        </p>
+        <p>p</p>
+    </div>
+</body>
+</html>

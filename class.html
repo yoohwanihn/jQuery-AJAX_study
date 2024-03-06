@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<p>, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <style>
+        .blue{
+            background-color: blue;
+        }
+        .color {
+            color : white;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btn").on('click', function(){
+                $("#target").addClass('blue color');
+            })
+            $("#btn_remove").on('click',()=>{
+                $("#target").removeClass('color');
+            })
+            $("#btn_toggle").on('click',()=>{
+                $("#target").toggleClass('blue color');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">addClass 클릭</button>
+    <button id="btn_remove">removeClass 클릭</button>
+    <button id="btn_toggle">toggleClass 클릭</button>
+    <p id="target">안녕하세요.</p>
+</body>
+</html>

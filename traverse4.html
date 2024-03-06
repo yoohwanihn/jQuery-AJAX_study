@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').on('click',function(){
+                // $('p').first().css({border : "2px solid red"})
+
+                // $('p').last().css({border : "2px solid red"})
+
+                /** 0부터 시작이라 3번째 css가 변경 */
+                //$('p').eq(2).css({border : "2px solid red"})
+
+                /** 클래스=a가 아닌 모든 p태그 */
+                //$('p').not(".a").css({border : "2px solid red"})
+
+                /** 클래스가 a인 p태그만 */
+                //$('p').filter(".a").css({border : "2px solid red"})
+
+                /** 모든 p태그에 border를 적용하고 그중 클래스 = a인 태그에는 bgc yellow도 추가 적용 */
+                $('p').css({border : "2px solid red"})
+                        .filter(".a")
+                        .css({backgroundColor : "yellow"});
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">클릭해보세요.</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aspernatur eveniet officia id expedita
+        molestias voluptas, possimus corrupti voluptatibus doloremque porro ipsam ullam, minima iure distinctio, quis
+        blanditiis laudantium officiis!</p>
+    <p class="a">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aspernatur eveniet officia id expedita
+        molestias voluptas, possimus corrupti voluptatibus doloremque porro ipsam ullam, minima iure distinctio, quis
+        blanditiis laudantium officiis!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aspernatur eveniet officia id expedita
+        molestias voluptas, possimus corrupti voluptatibus doloremque porro ipsam ullam, minima iure distinctio, quis
+        blanditiis laudantium officiis!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aspernatur eveniet officia id expedita
+        molestias voluptas, possimus corrupti voluptatibus doloremque porro ipsam ullam, minima iure distinctio, quis
+        blanditiis laudantium officiis!</p>
+</body>
+
+</html>

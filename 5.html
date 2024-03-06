@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .div_menu{
+            width: 300px;
+            background-color: yellowgreen;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn_menu_down">메뉴야 열려라</button>
+    <button class="btn_menu_up">메뉴야 닫혀라</button>
+    <button class="btn_menu_toggle">메뉴 토글</button>
+    <div class="div_menu">메뉴1<br>메뉴2<br>메뉴3</div>
+    <script>
+        $("button.btn_menu_down").on('click', function(){
+            //show랑 유사한데 show는 대각선으로 나오고 slideDown은 두루마리 펼치듯 나옴
+            $("div.div_menu").slideDown("slow");
+        });
+        $("button.btn_menu_up").on('click', function(){
+            // hide랑 유사한데 hide는 대각선으로 사라지고 slideDown은 위랑 같음
+            $("div.div_menu").slideUp("slow");
+
+        });
+        $("button.btn_menu_toggle").on('click', function(){
+            // 일반 toggle이랑 다름
+            $("div.div_menu").slideToggle("slow");
+        })
+    </script>
+</body>
+</html>
